@@ -11,6 +11,7 @@
     "check-types": "tsc --noEmit"
   },
   "dependencies": {
+    "@repo/trpc": "*",
     "@tailwindcss/postcss": "^4.1.11",
     "next": "^15.3.0",
     "postcss": "^8.4.31",
