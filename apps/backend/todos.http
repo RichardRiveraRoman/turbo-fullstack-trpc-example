@@ -1,0 +1,55 @@
+### 
+
+@baseUrl = http://localhost:3000/trpc
+@todoId = 95ba6434-dded-43ef-a2dc-d0d982f00296
+
+
+### Get all todos
+
+GET {{baseUrl}}/todo.findAll HTTP/1.1
+
+
+### Create a new todo
+
+POST {{baseUrl}}/todo.create HTTP/1.1
+Content-Type: application/json
+
+{
+  "completed": false,
+  "description": "This is a test todo",
+  "dueDate": "2023-12-31T23:59:59.999Z",
+  "name": "My New Todo from HTTP file",
+  "priority": "medium"
+}
+
+
+### Get todo by ID
+
+@input = { "id": "{{todoId}}" }
+
+GET {{baseUrl}}/todo.findOne?input={{input}} HTTP/1.1
+
+
+### Update a todo
+
+POST {{baseUrl}}/todo.update HTTP/1.1
+Content-Type: application/json
+
+{
+  "data": {
+    "completed": true,
+    "name": "Updated Todo Name",
+    "priority": "high"
+  },
+  "id": "{{todoId}}"
+}
+
+
+### Delete a todo
+
+POST {{baseUrl}}/todo.delete HTTP/1.1
+Content-Type: application/json
+
+{
+  "id": "{{todoId}}"
+}
