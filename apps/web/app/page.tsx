@@ -9,7 +9,9 @@ export default function Home() {
 
   return (
     <main>
-      <h1 className="text-3xl font-bold underline"> Hello world! </h1>
+      <h1 className="text-3xl font-bold underline">
+        To view the todos got to http://localhost:5173/todos
+      </h1>
     </main>
   );
 }
